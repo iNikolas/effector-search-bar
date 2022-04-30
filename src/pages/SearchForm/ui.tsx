@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useGate, useStore } from "effector-react";
 import { Button, TextField, Typography } from "@mui/material";
 import { Container, FlexFormContainer } from "../../features";
