@@ -1,46 +1,35 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+Search bar with embedded Mock analytics powered by Effector (event-driven multistore state manager). Open console to view logs:
 
-### `yarn start`
+1. `search_form_shown` after 3 sec of mounting (_analytics initialization time_).
+2. `search_changed` after each individual character input into the form.
+3. `search_button_clicked` after Search Button click.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+All analytics events are persisted and deferred before initialization time.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Main Effector benefits
 
-### `yarn test`
+I can emphasize main effector benefits that it can bring to the table:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. You can completely separate business logic from React components. Without Effector, the same analytics Events will be scattered across UI component logic inside _useEffects_ and _onHandelers_. With Effector you can put your analytics logic solely into one file.
+2. Event driven approach with lessen boilerplate code comparatively to _Redux_.
+3. Alleviated _TDD_ approach due to few Effector helpers like _fork_, _allSettled_ and _createDomain_ Effector functions. Check `analytics.test.ts` file for more details of usage.
 
-### `yarn build`
+## Getting started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+0. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Run the project:
 
-### `yarn eject`
+```sh
+yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
