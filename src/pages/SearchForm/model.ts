@@ -6,23 +6,22 @@ import {
   forward,
 } from "effector";
 import { createGate } from "effector-react";
+import { writeToResults } from "../../features/results";
 
-const searchFormGate = createGate();
+export const searchFormGate = createGate();
 
-const searchChanged = createEvent<string>();
+export const searchChanged = createEvent<string>();
 const searchReset = createEvent();
-const searchButtonClicked = createEvent();
-const startSearchFx = createEffect<string, void, Error>({
+export const searchButtonClicked = createEvent();
+export const startSearchFx = createEffect({
   handler: (search: string) => {
     console.log("Поиск начался!", search);
   },
 });
 
-const $search = createStore("")
+export const $search = createStore("")
   .on(searchChanged, (_, newSearch) => newSearch)
   .reset(searchReset);
 
 sample({ source: $search, target: startSearchFx, clock: searchButtonClicked });
-forward({ from: startSearchFx, to: searchReset });
-
-export { $search, searchChanged, searchButtonClicked, searchFormGate };
+forward({ from: startSearchFx, to: [searchReset, writeToResults] });

@@ -1,7 +1,12 @@
 import React from "react";
 import { useGate, useStore } from "effector-react";
 import { Button, TextField, Typography } from "@mui/material";
-import { Container, FlexFormContainer } from "../../features";
+import {
+  Container,
+  FiltersBar,
+  FlexFormContainer,
+  ResultsList,
+} from "../../features";
 import {
   $search,
   searchButtonClicked,
@@ -52,6 +57,8 @@ export function SearchForm() {
           Search
         </Button>
       </FlexFormContainer>
+      <FiltersBar />
+      <ResultsList />
     </Container>
   );
 }

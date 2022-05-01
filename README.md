@@ -7,6 +7,8 @@ Search bar with embedded Mock analytics powered by Effector (event-driven multis
 1. `search_form_shown` after 3 sec of mounting (_analytics initialization time_).
 2. `search_changed` after each individual character input into the form.
 3. `search_button_clicked` after Search Button click.
+4. `Filter_activated` or `Filter_deactivated` after checking or unchecking filter checkboxes.
+5. `filtered_flight_count` after search result changes according to search input or applied filters.
 
 All analytics events are persisted and deferred before initialization time.
 
