@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/effector-search-bar/static/js/main.bca4b545.js",
+    "main.js": "/effector-search-bar/static/js/main.aab7acaf.js",
     "index.html": "/effector-search-bar/index.html",
-    "main.bca4b545.js.map": "/effector-search-bar/static/js/main.bca4b545.js.map"
+    "main.aab7acaf.js.map": "/effector-search-bar/static/js/main.aab7acaf.js.map"
   },
   "entrypoints": [
-    "static/js/main.bca4b545.js"
+    "static/js/main.aab7acaf.js"
   ]
 }
